@@ -1,0 +1,6 @@
+name: AdvancedProfiles
+main: me.jakeythedev.profiles.Profiles
+version: 1.0
+commands:
+  profile:
+    description: View your own or someone elses profiles.
