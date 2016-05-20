@@ -5,6 +5,3 @@ Settings:
   USERNAME: 'root'
   PASSWORD: 'root'
   chatstats: true
-
-UI:
- update_item: true

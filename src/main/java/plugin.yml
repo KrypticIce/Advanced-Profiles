@@ -1,6 +1,6 @@
 name: AdvancedProfiles
 main: me.jakeythedev.profiles.Profiles
-version: 1.0
+version: 2.0
 commands:
   profile:
-    description: View your own or someone elses profiles.
+    description: View your own profile.

@@ -30,7 +30,7 @@ public class Database
 	{
 
 		final String CREATE_IF_NOT_EXISTS = "CREATE TABLE IF NOT EXISTS " + table + "(" + columns + ");";
-		
+
 		PreparedStatement statement = null;
 
 		try
@@ -56,8 +56,7 @@ public class Database
 		try
 		{
 			_connection = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + db, username, password);
-			System.out.println("Database connection established! Connected to " + ip + ":" + port
-					+ " with the username: " + username);
+			System.out.println("Database connection established! Connected to " + ip + ":" + port + " with the username: " + username);
 		}
 		catch (SQLException e)
 		{
@@ -79,16 +78,16 @@ public class Database
 			System.out.println("Could not close connection. See stack trace for info!");
 		}
 	}
-	
+
 	public void sendUpdate(String query)
 	{
-		
+
 		try
 		{
 			PreparedStatement statement = getConnection().prepareStatement(query);
 			statement.executeUpdate();
 			statement.close();
-			
+
 			System.out.println("Sent " + query + " to database!");
 		}
 		catch (Exception e)
@@ -97,16 +96,16 @@ public class Database
 			System.out.println("Could not send update to database!");
 		}
 	}
-	
+
 	public ResultSet sendQuery(String query)
 	{
 		ResultSet set = null;
-		
+
 		try
 		{
 			PreparedStatement statment = getConnection().prepareStatement(query);
 			set = statment.executeQuery();
-			
+
 			System.out.println("Sent " + query + " to database!");
 		}
 		catch (Exception e)
@@ -114,7 +113,7 @@ public class Database
 			e.printStackTrace();
 			System.out.println("Could not send query to database!");
 		}
-		
+
 		return set;
 	}
 
